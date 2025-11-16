@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags (from plan) -->
+    <title>Free Christian Resources | Daily Devotion, Bible App & More</title>
+    <meta
+      name="description"
+      content="Access free daily devotions, the Bible verse of the day, a free Bible app, and other resources to empower your faith daily."
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (from plan) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            colors: {
+              "brand-yellow": "#FACC15", // From your logo (amber-400)
+              "brand-dark": "#111827", // gray-900
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans antialiased">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0">
+          <img src="LOGO.jpg" alt="Godly.id Logo" class="h-12 w-auto" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="index.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Home</a
+          >
+          <a
+            href="accept-jesus.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Accept Jesus</a
+          >
+          <a
+            href="courses.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Courses</a
+          >
+          <a
+            href="resources.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Resources</a
+          >
+          <a
+            href="prayer-wall.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Community</a
+          >
+          <a
+            href="contact.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Mobile Menu Button (Hamburger) -->
+        <div class="md:hidden">
+          <button id="menu-button" class="text-brand-dark focus:outline-none">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+        <a
+          href="index.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Home</a
+        >
+        <a
+          href="accept-jesus.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Accept Jesus</a
+        >
+        <a
+          href="courses.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Courses</a
+        >
+        <a
+          href="resources.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Resources</a
+        >
+        <a
+          href="prayer-wall.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Community</a
+        >
+        <a
+          href="contact.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Contact</a
+        >
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- 1. Hero Section -->
+      <section id="hero-resources" class="bg-brand-dark py-24 md:py-32">
+        <div
+          class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
+        >
+          <h1 class="text-5xl md:text-7xl font-serif font-bold leading-tight">
+            Free Resources to Empower Your Faith
+          </h1>
+          <p class="text-xl text-gray-300 mt-6 max-w-2xl mx-auto">
+            Tools, content, and communities to help you connect with God's word
+            every day.
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. Daily Devotion Section -->
+      <section id="daily-devotion" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto"
+          >
+            <!-- Media (Left) -->
+            <div class="flex justify-center">
+              <img
+                src="https://res.cloudinary.com/dfmaxgyhm/image/upload/v1763030728/reading_bible.482Z_flsc65.png"
+                alt="A person reading a Bible by morning light"
+                class="rounded-lg shadow-2xl w-full max-w-md object-cover"
+              />
+            </div>
+
+            <!-- Content (Right) -->
+            <div>
+              <h2
+                class="text-4xl md:text-5xl font-serif font-bold text-brand-dark leading-tight"
+              >
+                Daily Devotion
+              </h2>
+              <h3 class="text-2xl font-serif font-bold text-gray-700 mt-8">
+                Today's Focus: [Title of Devotion]
+              </h3>
+              <p class="text-lg text-gray-700 mt-4">
+                [This area will display the "Read Today's Devotional" content.
+                It will be populated from the CMS once we connect it.]
+              </p>
+              <p class="text-md text-gray-500 italic mt-4">
+                Source: C.H. Spurgeon
+              </p>
+              <a
+                href="#"
+                class="mt-8 inline-block bg-brand-yellow text-brand-dark font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:bg-yellow-300 transition duration-300 transform hover:scale-105"
+              >
+                Read Today's Devotional
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Verse of the Day Section (with API) -->
+      <section
+        id="verse-of-the-day"
+        class="py-16 md:py-24 bg-brand-dark text-white"
+      >
+        <div
+          class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center"
+        >
+          <h2 class="text-4xl md:text-5xl font-serif font-bold">
+            Bible Verse of the Day
+          </h2>
+
+          <!-- This blockquote will be filled by the JavaScript API call -->
+          <blockquote
+            id="verse-content"
+            class="text-3xl font-serif italic mt-8 min-h-[150px] flex flex-col justify-center"
+          >
+            <!-- Loading Spinner -->
+            <svg
+              class="animate-spin h-8 w-8 text-brand-yellow mx-auto"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              ></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+          </blockquote>
+
+          <cite
+            id="verse-reference"
+            class="block text-xl font-sans not-italic mt-4 text-gray-300"
+          ></cite>
+        </div>
+      </section>
+
+      <!-- 4. Other Resources Grid -->
+      <section id="other-resources" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-4xl md:text-5xl font-serif font-bold text-center text-brand-dark mb-16"
+          >
+            More Free Resources
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Card 1: Free Bible App -->
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center flex flex-col"
+            >
+              <div
+                class="flex items-center justify-center h-16 w-16 bg-brand-yellow rounded-full mx-auto mb-6"
+              >
+                <!-- Heroicon: Device Phone Mobile -->
+                <svg
+                  class="w-8 h-8 text-brand-dark"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75A2.25 2.25 0 0 0 15.75 1.5m-7.5 0v.01M12 18a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-serif font-bold text-brand-dark mb-3">
+                Free Bible App
+              </h3>
+              <p class="text-gray-600 mb-5 flex-grow">
+                Get a free Bible in your own language. Take it with you wherever
+                you go!
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block bg-brand-yellow text-brand-dark font-bold px-8 py-3 rounded-full hover:bg-yellow-300 transition duration-300"
+              >
+                Download Now
+              </a>
+            </div>
+
+            <!-- Card 2: Free Tracts -->
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center flex flex-col"
+            >
+              <div
+                class="flex items-center justify-center h-16 w-16 bg-brand-yellow rounded-full mx-auto mb-6"
+              >
+                <!-- Heroicon: Document Text -->
+                <svg
+                  class="w-8 h-8 text-brand-dark"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-serif font-bold text-brand-dark mb-3">
+                Free Tracts
+              </h3>
+              <p class="text-gray-600 mb-5 flex-grow">
+                We design simple Christian Tracts, making them available for
+                free PDF download.
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block bg-brand-yellow text-brand-dark font-bold px-8 py-3 rounded-full hover:bg-yellow-300 transition duration-300"
+              >
+                Download Now
+              </a>
+            </div>
+
+            <!-- Card 3: Alpha Online -->
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center flex flex-col"
+            >
+              <div
+                class="flex items-center justify-center h-16 w-16 bg-brand-yellow rounded-full mx-auto mb-6"
+              >
+                <!-- Heroicon: Chat Bubble Left Right -->
+                <svg
+                  class="w-8 h-8 text-brand-dark"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193l-3.722.537c-.654.094-1.32-.026-1.867-.38a1.623 1.623 0 0 1-.572-.618c-.377-.664-.982-1.14-1.683-1.372a1.623 1.623 0 0 1-.618-.572c-.354-.546-.473-1.213-.38-1.866l.537-3.722c.094-.654.557-1.215 1.188-1.463a4.502 4.502 0 0 1 2.097-1.5Z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 12.097c0-1.136.847-2.1 1.98-2.193l3.722-.537c.654-.094 1.32.026 1.867.38a1.623 1.623 0 0 0 .572.618c.377.664.982 1.14 1.683 1.372a1.623 1.623 0 0 0 .618.572c.354.546.473 1.213.38 1.866l-.537 3.722c-.094.654-.557 1.215-1.188 1.463a4.502 4.502 0 0 0-2.097 1.5c-.884-.284-1.5-1.128-1.5-2.097v-4.286Z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-serif font-bold text-brand-dark mb-3">
+                Alpha Online
+              </h3>
+              <p class="text-gray-600 mb-5 flex-grow">
+                Alpha Online is a 8 week course that creates a space for you and
+                others to have real and exciting conversations about faith,
+                life, and God.
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block bg-brand-yellow text-brand-dark font-bold px-8 py-3 rounded-full hover:bg-yellow-300 transition duration-300"
+              >
+                Sign Up
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Column 1: Logo & Socials -->
+          <div>
+            <img
+              src="https://placehold.co/180x50/FACC15/000000?text=Godly+media&font=sans"
+              alt="Godly.id Logo"
+              class="h-12 w-auto mb-4"
+            />
+            <p class="mb-4">Discover the life-changing love of God.</p>
+            <div class="flex space-x-4">
+              <!-- Social Icons (Placeholders) -->
+              <a
+                href="#"
+                class="hover:text-white transition duration-300"
+                aria-label="Facebook"
+                ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M..."></path></svg
+              ></a>
+              <a
+                href="#"
+                class="hover:text-white transition duration-300"
+                aria-label="Instagram"
+                ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M..."></path></svg
+              ></a>
+              <a
+                href="#"
+                class="hover:text-white transition duration-300"
+                aria-label="YouTube"
+                ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M..."></path></svg
+              ></a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div>
+            <h4 class="font-bold text-white text-lg mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-white transition duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="accept-jesus.html"
+                  class="hover:text-white transition duration-300"
+                  >Accept Jesus</a
+                >
+              </li>
+              <li>
+                <a
+                  href="courses.html"
+                  class="hover:text-white transition duration-3D"
+                  >Courses</a
+                >
+              </li>
+              <li>
+                <a
+                  href="resources.html"
+                  class="hover:text-white transition duration-300"
+                  >Resources</a
+                >
+              </li>
+              <li>
+                <a
+                  href="prayer-wall.html"
+                  class="hover:text-white transition duration-300"
+                  >Prayer Wall</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-white transition duration-300"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Resources -->
+          <div>
+            <h4 class="font-bold text-white text-lg mb-4">Explore</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="resources.html"
+                  class="hover:text-white transition duration-300"
+                  >Daily Devotion</a
+                >
+              </li>
+              <li>
+                <a
+                  href="resources.html"
+                  class="hover:text-white transition duration-300"
+                  >Bible Verse</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition duration-300"
+                  >Free Bible App</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition duration-300"
+                  >Alpha Online</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact -->
+          <div>
+            <h4 class="font-bold text-white text-lg mb-4">Contact Us</h4>
+            <p>Have questions? We're here to help.</p>
+            <a
+              href="contact.html"
+              class="mt-3 inline-block bg-brand-yellow text-brand-dark font-bold px-6 py-2 rounded-full hover:bg-yellow-300 transition duration-300"
+            >
+              Get in Touch
+            </a>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="mt-16 pt-8 border-t border-gray-700 text-center">
+          <p>
+            &copy; 2025 Godly.id. All rights reserved. |
+            <a href="#" class="hover:text-white">Privacy Policy</a> |
+            <a href="#" class="hover:text-white">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Verse of the Day API -->
+    <script>
+      // --- Mobile Menu Toggle ---
+      document
+        .getElementById("menu-button")
+        .addEventListener("click", function () {
+          var mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      // Close mobile menu when a link is clicked
+      var mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+      mobileMenuLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.add("hidden");
+        });
+      });
+
+      // --- Verse of the Day API Call ---
+      // This runs automatically when the page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        const verseElement = document.getElementById("verse-content");
+        const referenceElement = document.getElementById("verse-reference");
+
+        // This is the free API we discussed. No key needed.
+        const apiUrl =
+          "https://beta.ourmanna.com/api/v1/get?format=json&order=daily";
+
+        fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            // We have the data, now let's display it
+            const verse = data.verse.details.text;
+            const reference = data.verse.details.reference;
+
+            // Clear the loading spinner
+            verseElement.innerHTML = "";
+
+            // Set the verse text
+            verseElement.textContent = `"${verse}"`;
+            // Set the reference text
+            referenceElement.textContent = `— ${reference}`;
+          })
+          .catch((error) => {
+            // If the API fails, show a fallback verse
+            console.error("Error fetching verse:", error);
+            verseElement.innerHTML = ""; // Clear loading
+            verseElement.textContent =
+              '"In every thing give thanks: for this is the will of God in Christ Jesus concerning you."';
+            referenceElement.textContent = "— 1 Thessalonians 5:18";
+          });
+      });
+    </script>
+  </body>
+</html>

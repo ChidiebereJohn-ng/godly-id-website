@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags (from plan) -->
+    <title>Contact Us | Godly.id</title>
+    <meta
+      name="description"
+      content="Have questions about your faith, our resources, or want to connect? Get in touch with our team. We'd love to hear from you."
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (from plan) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            colors: {
+              "brand-yellow": "#FACC15", // From your logo (amber-400)
+              "brand-dark": "#111827", // gray-900
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans antialiased bg-gray-50">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0">
+          <img src="LOGO.jpg" alt="Godly.id Logo" class="h-12 w-auto" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="index.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Home</a
+          >
+          <a
+            href="accept-jesus.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Accept Jesus</a
+          >
+          <a
+            href="courses.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Courses</a
+          >
+          <a
+            href="resources.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Resources</a
+          >
+          <a
+            href="prayer-wall.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Community</a
+          >
+          <a
+            href="contact.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Mobile Menu Button (Hamburger) -->
+        <div class="md:hidden">
+          <button id="menu-button" class="text-brand-dark focus:outline-none">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+        <a
+          href="index.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Home</a
+        >
+        <a
+          href="accept-jesus.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Accept Jesus</a
+        >
+        <a
+          href="courses.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Courses</a
+        >
+        <a
+          href="resources.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Resources</a
+        >
+        <a
+          href="prayer-wall.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Community</a
+        >
+        <a
+          href="contact.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Contact</a
+        >
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- 1. Header Section -->
+      <section class="py-24 md:py-32 bg-white">
+        <div
+          class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center"
+        >
+          <h1
+            class="text-5xl md:text-7xl font-serif font-bold text-brand-dark leading-tight"
+          >
+            Get in Touch
+          </h1>
+          <h2 class="text-xl md:text-2xl font-sans text-brand-dark mt-4">
+            We'd Love to Hear From You
+          </h2>
+          <p class="text-lg text-gray-700 mt-6">
+            Whether you have a question about our resources, a story to share,
+            or need prayer, our team is here for you. Please use the form below
+            to connect with us, and we'll get back to you as soon as possible.
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. Contact Form Section -->
+      <section class="pb-16 md:pb-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+          <!-- This is a placeholder form. We will connect this to a backend function later. -->
+          <form
+            id="contact-form"
+            class="bg-white p-8 rounded-lg shadow-xl space-y-6"
+          >
+            <div>
+              <label
+                for="contact-name"
+                class="block text-lg font-medium text-brand-dark"
+                >Your Name</label
+              >
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300 text-brand-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="contact-email"
+                class="block text-lg font-medium text-brand-dark"
+                >Your Email</label
+              >
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300 text-brand-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="subject"
+                class="block text-lg font-medium text-brand-dark"
+                >Subject</label
+              >
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300 text-brand-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="message"
+                class="block text-lg font-medium text-brand-dark"
+                >Your Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300 text-brand-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+                required
+              ></textarea>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="w-full md:w-auto bg-brand-yellow text-brand-dark font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:bg-yellow-300 transition duration-300 transform hover:scale-105"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+          <!-- Form submission message (hidden) -->
+          <div
+            id="contact-success"
+            class="hidden mt-6 p-4 bg-green-100 text-green-800 rounded-lg text-center"
+          >
+            Thank you for your message! We'll get back to you soon.
+          </div>
+          <div
+            id="contact-error"
+            class="hidden mt-6 p-4 bg-red-100 text-red-800 rounded-lg text-center"
+          >
+            Sorry, something went wrong. Please try again.
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Alternative Contact Section -->
+      <section class="py-16 md:py-24 bg-brand-dark text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-4xl font-serif font-bold">Connect With Us</h2>
+          <p class="text-lg text-gray-300 mt-4">
+            You can also join the conversation on our social media channels.
+          </p>
+          <!-- Social Icons (Placeholders) -->
+          <div class="flex justify-center space-x-8 mt-8">
+            <a
+              href="#"
+              class="text-brand-yellow hover:text-yellow-300 transition duration-300"
+              aria-label="Facebook"
+            >
+              <svg
+                class="w-10 h-10"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="text-brand-yellow hover:text-yellow-300 transition duration-300"
+              aria-label="Instagram"
+            >
+              <svg
+                class="w-10 h-10"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.645-.07-4.85s.012-3.584.07-4.85c.148-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="text-brand-yellow hover:text-yellow-300 transition duration-300"
+              aria-label="YouTube"
+            >
+              <svg
+                class="w-10 h-10"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Column 1: Logo & Socials -->
+          <div>
+            <img
+              src="https://placehold.co/180x50/FACC15/000000?text=Godly+media&font=sans"
+              alt="Godly.id Logo"
+              class="h-12 w-auto mb-4"
+            />
+            <p class="mb-4">Discover the life-changing love of God.</p>
+            <div class="flex space-x-4">
+              <!-- Social Icons (Placeholders) -->
+              <a
+                href="#"
+                class="hover:text-white transition duration-300"
+                aria-label="Facebook"
+                ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M..."></path></svg
+              ></a>
+              <a
+                href="#"
+                class="hover:text-white transition duration-300"
+                aria-label="Instagram"
+                ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M..."></path></svg
+              ></a>
+              <a
+                href="#"
+                class="hover:text-white transition duration-300"
+                aria-label="YouTube"
+                ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M..."></path></svg
+              ></a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div>
+            <h4 class="font-bold text-white text-lg mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-white transition duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="accept-jesus.html"
+                  class="hover:text-white transition duration-300"
+                  >Accept Jesus</a
+                >
+              </li>
+              <li>
+                <a
+                  href="courses.html"
+                  class="hover:text-white transition duration-3D"
+                  >Courses</a
+                >
+              </li>
+              <li>
+                <a
+                  href="resources.html"
+                  class="hover:text-white transition duration-300"
+                  >Resources</a
+                >
+              </li>
+              <li>
+                <a
+                  href="prayer-wall.html"
+                  class="hover:text-white transition duration-300"
+                  >Prayer Wall</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-white transition duration-300"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Resources -->
+          <div>
+            <h4 class="font-bold text-white text-lg mb-4">Explore</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="resources.html"
+                  class="hover:text-white transition duration-300"
+                  >Daily Devotion</a
+                >
+              </li>
+              <li>
+                <a
+                  href="resources.html"
+                  class="hover:text-white transition duration-300"
+                  >Bible Verse</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition duration-300"
+                  >Free Bible App</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition duration-300"
+                  >Alpha Online</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact -->
+          <div>
+            <h4 class="font-bold text-white text-lg mb-4">Contact Us</h4>
+            <p>Have questions? We're here to help.</p>
+            <a
+              href="contact.html"
+              class="mt-3 inline-block bg-brand-yellow text-brand-dark font-bold px-6 py-2 rounded-full hover:bg-yellow-300 transition duration-300"
+            >
+              Get in Touch
+            </a>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="mt-16 pt-8 border-t border-gray-700 text-center">
+          <p>
+            &copy; 2025 Godly.id. All rights reserved. |
+            <a href="#" class="hover:text-white">Privacy Policy</a> |
+            <a href="#" class="hover:text-white">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Form Stub -->
+    <script>
+      // --- Mobile Menu Toggle ---
+      document
+        .getElementById("menu-button")
+        .addEventListener("click", function () {
+          var mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      // Close mobile menu when a link is clicked
+      var mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+      mobileMenuLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.add("hidden");
+        });
+      });
+
+      // --- Contact Form Stub ---
+      const contactForm = document.getElementById("contact-form");
+      const contactSuccess = document.getElementById("contact-success");
+      const contactError = document.getElementById("contact-error");
+
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Stop the form from actually submitting
+
+        // Hide previous messages
+        contactSuccess.classList.add("hidden");
+        contactError.classList.add("hidden");
+
+        // Get form values
+        const name = document.getElementById("contact-name").value;
+        const email = document.getElementById("contact-email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        if (name && email && subject && message) {
+          // On success:
+          // 1. Show the success message
+          contactSuccess.classList.remove("hidden");
+          // 2. Clear the form
+          contactForm.reset();
+          // 3. Hide the message after a few seconds
+          setTimeout(() => {
+            contactSuccess.classList.add("hidden");
+          }, 5000);
+
+          // When we connect the backend, the real submission logic will go here.
+        } else {
+          // Show an error if fields are empty (basic validation)
+          contactError.textContent = "Please fill out all fields.";
+          contactError.classList.remove("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>
