@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags (from plan) -->
+    <title>Community Prayer Wall | Godly.id</title>
+    <meta
+      name="description"
+      content="Join our online community in prayer. Share your prayer requests, pray for others, and experience the power of corporate prayer."
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (from plan) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            colors: {
+              "brand-yellow": "#FACC15",
+              "brand-dark": "#111827",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans antialiased bg-gray-50 flex flex-col min-h-screen">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0">
+          <img src="LOGO.jpg" alt="Godly.id Logo" class="h-12 w-auto" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="index.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Home</a
+          >
+          <a
+            href="accept-jesus.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Accept Jesus</a
+          >
+          <a
+            href="courses.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Courses</a
+          >
+          <a
+            href="resources.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Resources</a
+          >
+          <a
+            href="prayer-wall.html"
+            class="font-medium text-brand-yellow transition duration-300"
+            >Community</a
+          >
+          <a
+            href="contact.html"
+            class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Mobile Menu Button (Hamburger) -->
+        <div class="md:hidden">
+          <button id="menu-button" class="text-brand-dark focus:outline-none">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+        <a
+          href="index.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Home</a
+        >
+        <a
+          href="accept-jesus.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Accept Jesus</a
+        >
+        <a
+          href="courses.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Courses</a
+        >
+        <a
+          href="resources.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Resources</a
+        >
+        <a
+          href="prayer-wall.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Community</a
+        >
+        <a
+          href="contact.html"
+          class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark"
+          >Contact</a
+        >
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <!-- 1. Hero Section -->
+      <section
+        id="hero-prayer-wall"
+        class="relative py-32 md:py-48 flex items-center justify-center text-center text-white px-4 overflow-hidden min-h-[400px]"
+      >
+        <!-- Background Image -->
+        <img
+          src="https://res.cloudinary.com/dfmaxgyhm/image/upload/v1763030953/prayer_wall.774Z_syn8cc.png"
+          alt="Glowing lights representing community prayers"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-brand-dark opacity-60"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-3xl">
+          <h1 class="text-5xl md:text-7xl font-serif font-bold leading-tight">
+            The Prayer Wall
+          </h1>
+          <h2 class="text-xl md:text-2xl font-sans mt-4">
+            A House of Prayer for Everyone
+          </h2>
+        </div>
+      </section>
+
+      <!-- 2. Intro Content Section -->
+      <section class="py-16 md:py-24 bg-white">
+        <div
+          class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center"
+        >
+          <div class="text-lg text-gray-700 leading-relaxed space-y-6">
+            <p>
+              God has wonderful plans for each one of us. But how do we access
+              those plans?
+            </p>
+            <p>
+              One way is through prayer. In the Bible, God promises us that if
+              we pray, He will hear us; if we look for him, we will find Him;
+              and if we need help, He will rescue us. But how do we pray?
+            </p>
+            <p>
+              Prayer is not complicated. Prayer is simply a conversation with
+              God. A conversation which He has already started through His word.
+              It's a conversation to which everyone is invited. When we pray
+              together it's just a bigger conversation.
+            </p>
+            <p>
+              We believe in the power of corporate prayer. God has always wanted
+              a 'house of prayer' a praying community - where everyone is
+              welcome that's what we want to be.
+            </p>
+            <p class="font-bold text-brand-dark text-xl">
+              So, why don't you come and join us and pray on our online PRAYER
+              WALL.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Add Prayer Form Section -->
+      <section class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+          <h2
+            class="text-4xl md:text-5xl font-serif font-bold text-center text-brand-dark mb-10"
+          >
+            Add Your Prayer Request
+          </h2>
+          <form
+            id="prayer-form"
+            class="bg-white p-8 rounded-lg shadow-xl space-y-6"
+          >
+            <div>
+              <label
+                for="name"
+                class="block text-lg font-medium text-brand-dark"
+                >Your Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="e.g., Amos, Mike, Mercy"
+                class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300 text-brand-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="prayer"
+                class="block text-lg font-medium text-brand-dark"
+                >Your Prayer</label
+              >
+              <textarea
+                id="prayer"
+                name="prayer"
+                rows="5"
+                placeholder="Share your prayer request here..."
+                class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300 text-brand-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+                required
+              ></textarea>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                id="submit-prayer-btn"
+                class="w-full md:w-auto bg-brand-yellow text-brand-dark font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:bg-yellow-300 transition duration-300 transform hover:scale-105"
+              >
+                Add Your Prayer
+              </button>
+            </div>
+          </form>
+          <!-- Form submission message (hidden) -->
+          <div
+            id="form-success"
+            class="hidden mt-6 p-4 bg-green-100 text-green-800 rounded-lg text-center"
+          >
+            Thank you! Your prayer has been added to the wall.
+          </div>
+          <div
+            id="form-error"
+            class="hidden mt-6 p-4 bg-red-100 text-red-800 rounded-lg text-center"
+          >
+            Sorry, something went wrong. Please try again.
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Prayer Feed Section -->
+      <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2
+            class="text-4xl md:text-5xl font-serif font-bold text-center text-brand-dark mb-16"
+          >
+            Community Prayers
+          </h2>
+
+          <div id="loading-prayers" class="text-center py-10">
+              <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-brand-yellow"></div>
+              <p class="text-gray-500 mt-2">Loading prayers...</p>
+          </div>
+
+          <div id="prayer-feed" class="space-y-8">
+            <!-- Dynamic Prayers will be injected here -->
+          </div>
+          
+          <div id="no-prayers" class="hidden text-center text-gray-500 py-10">
+              Be the first to post a prayer!
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 mt-auto">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Column 1: Logo & Socials -->
+          <div>
+            <img
+              src="https://placehold.co/180x50/FACC15/000000?text=Godly+media&font=sans"
+              alt="Godly.id Logo"
+              class="h-12 w-auto mb-4"
+            />
+            <p class="mb-4">Discover the life-changing love of God.</p>
+            <div class="flex space-x-4">
+              <!-- Social Icons -->
+              <a href="#" class="hover:text-white transition duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M..."></path></svg></a>
+              <a href="#" class="hover:text-white transition duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M..."></path></svg></a>
+              <a href="#" class="hover:text-white transition duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M..."></path></svg></a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h4 class="font-bold text-white text-lg mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a href="index.html" class="hover:text-white transition duration-300">Home</a></li>
+              <li><a href="accept-jesus.html" class="hover:text-white transition duration-300">Accept Jesus</a></li>
+              <li><a href="courses.html" class="hover:text-white transition duration-300">Courses</a></li>
+              <li><a href="resources.html" class="hover:text-white transition duration-300">Resources</a></li>
+              <li><a href="prayer-wall.html" class="hover:text-white transition duration-300">Prayer Wall</a></li>
+              <li><a href="contact.html" class="hover:text-white transition duration-300">Contact</a></li>
+            </ul>
+          </div>
+           <!-- Explore -->
+           <div>
+            <h4 class="font-bold text-white text-lg mb-4">Explore</h4>
+            <ul class="space-y-2">
+              <li><a href="resources.html" class="hover:text-white transition duration-300">Daily Devotion</a></li>
+              <li><a href="resources.html" class="hover:text-white transition duration-300">Bible Verse</a></li>
+              <li><a href="#" class="hover:text-white transition duration-300">Free Bible App</a></li>
+              <li><a href="#" class="hover:text-white transition duration-300">Alpha Online</a></li>
+            </ul>
+          </div>
+          <!-- Contact -->
+          <div>
+            <h4 class="font-bold text-white text-lg mb-4">Contact Us</h4>
+            <p>Have questions? We're here to help.</p>
+            <a href="contact.html" class="mt-3 inline-block bg-brand-yellow text-brand-dark font-bold px-6 py-2 rounded-full hover:bg-yellow-300 transition duration-300">Get in Touch</a>
+          </div>
+        </div>
+        <!-- Bottom Bar -->
+        <div class="mt-16 pt-8 border-t border-gray-700 text-center">
+          <p>&copy; 2025 Godly.id. All rights reserved. | <a href="#" class="hover:text-white">Privacy Policy</a> | <a href="#" class="hover:text-white">Terms of Service</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Firebase Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { 
+            getFirestore, 
+            collection, 
+            addDoc, 
+            getDocs, 
+            updateDoc,
+            doc,
+            serverTimestamp, 
+            query, 
+            orderBy 
+        } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+        const app = initializeApp(window.firebaseConfig);
+        const db = getFirestore(app);
+
+        const prayerForm = document.getElementById("prayer-form");
+        const formSuccess = document.getElementById("form-success");
+        const formError = document.getElementById("form-error");
+        const submitBtn = document.getElementById("submit-prayer-btn");
+        const prayerFeed = document.getElementById("prayer-feed");
+        const loadingPrayers = document.getElementById("loading-prayers");
+        const noPrayers = document.getElementById("no-prayers");
+
+        // --- 1. Submit Prayer ---
+        prayerForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = "Posting...";
+            submitBtn.disabled = true;
+            formSuccess.classList.add("hidden");
+            formError.classList.add("hidden");
+
+            const name = document.getElementById("name").value;
+            const prayer = document.getElementById("prayer").value;
+
+            try {
+                await addDoc(collection(db, "prayers"), {
+                    name: name,
+                    content: prayer,
+                    createdAt: serverTimestamp(),
+                    amenCount: 0
+                });
+
+                formSuccess.classList.remove("hidden");
+                prayerForm.reset();
+                loadPrayers(); // Refresh list immediately
+
+                setTimeout(() => {
+                    formSuccess.classList.add("hidden");
+                }, 5000);
+            } catch (error) {
+                console.error("Error posting prayer:", error);
+                formError.textContent = "Error posting prayer. Please try again.";
+                formError.classList.remove("hidden");
+            } finally {
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // --- 2. Load Prayers ---
+        async function loadPrayers() {
+            try {
+                const q = query(collection(db, "prayers"), orderBy("createdAt", "desc"));
+                const querySnapshot = await getDocs(q);
+                
+                if(querySnapshot.empty) {
+                    loadingPrayers.classList.add('hidden');
+                    noPrayers.classList.remove('hidden');
+                    return;
+                }
+
+                let html = '';
+                querySnapshot.forEach((docSnap) => {
+                    const p = docSnap.data();
+                    const id = docSnap.id;
+                    const timeAgo = p.createdAt ? new Date(p.createdAt.toDate()).toLocaleDateString() : 'Just now';
+
+                    html += `
+                        <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-brand-yellow transition hover:shadow-xl">
+                            <p class="text-lg text-gray-800 italic">"${p.content}"</p>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="text-md font-medium text-brand-dark">${p.name}</span>
+                                <span class="text-sm text-gray-500">${timeAgo}</span>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-200">
+                                <button
+                                  onclick="window.handleAmen('${id}', ${p.amenCount || 0})"
+                                  class="font-bold text-brand-dark hover:text-brand-yellow transition duration-300 flex items-center group"
+                                >
+                                  <svg class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                                  </svg>
+                                  AMEN! (${p.amenCount || 0})
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                prayerFeed.innerHTML = html;
+                loadingPrayers.classList.add('hidden');
+                noPrayers.classList.add('hidden');
+
+            } catch (error) {
+                console.error("Error loading prayers:", error);
+                loadingPrayers.innerHTML = "<p class='text-red-500'>Failed to load prayers.</p>";
+            }
+        }
+
+        // --- 3. Handle Amen (Optimistic UI Update) ---
+        window.handleAmen = async (id, currentCount) => {
+            try {
+                // Optimistic update could go here, but for now we just wait for server
+                const prayerRef = doc(db, "prayers", id);
+                await updateDoc(prayerRef, {
+                    amenCount: currentCount + 1
+                });
+                loadPrayers(); // Refresh to show new count
+            } catch (error) {
+                console.error("Error clicking Amen:", error);
+                alert("Could not register your Amen. Try again.");
+            }
+        };
+
+        // Initial Load
+        loadPrayers();
+
+        // Mobile Menu
+        document.getElementById("menu-button").addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>

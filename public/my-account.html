@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account | Godly.id</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            colors: {
+              "brand-yellow": "#FACC15",
+              "brand-dark": "#111827",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 font-sans text-brand-dark flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2">
+           <img src="LOGO.jpg" alt="Godly.id" class="h-10 w-auto" />
+        </a>
+        <div class="flex items-center gap-4">
+             <span class="auth-user-name font-medium"></span>
+             <button class="auth-logout-btn text-sm text-gray-600 hover:text-red-600 font-medium">Sign Out</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-10 max-w-5xl flex-grow">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-8">
+        <div>
+          <h1 class="text-4xl font-serif font-bold">My Dashboard</h1>
+          <p class="text-gray-600 mt-2">Welcome back, <span class="auth-user-name font-bold">Student</span></p>
+        </div>
+        <a href="courses.html" class="mt-4 md:mt-0 text-brand-dark font-bold hover:text-brand-yellow transition">
+            Find More Courses &rarr;
+        </a>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loading-skeleton" class="animate-pulse space-y-6">
+        <div class="h-64 bg-gray-200 rounded-lg"></div>
+        <div class="h-64 bg-gray-200 rounded-lg"></div>
+      </div>
+
+      <!-- Dashboard Content (Hidden initially) -->
+      <div id="dashboard-content" class="hidden space-y-12">
+        
+        <!-- Section: My Courses -->
+        <section>
+          <h2 class="text-2xl font-bold mb-6 flex items-center gap-2 border-b pb-2 border-gray-200">
+            <svg class="w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            Enrolled Courses
+          </h2>
+          
+          <div id="courses-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+             <!-- Course Cards will be injected here via JS -->
+          </div>
+          
+          <!-- Empty State -->
+          <div id="no-enrollments" class="hidden bg-white p-6 rounded-lg shadow border border-gray-100 text-center text-gray-500 py-12">
+                <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                <p>You are not enrolled in any courses yet.</p>
+                <a href="courses.html" class="inline-block mt-4 bg-brand-yellow text-brand-dark font-bold px-6 py-2 rounded-full hover:bg-yellow-300 transition">Browse Courses</a>
+          </div>
+        </section>
+
+        <!-- Section: My Certificates -->
+        <section>
+          <h2 class="text-2xl font-bold mb-6 flex items-center gap-2 border-b pb-2 border-gray-200">
+            <svg class="w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            My Certificates
+          </h2>
+          
+          <div id="certificates-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+             <!-- Certificates will appear here -->
+             <div id="no-certificates" class="col-span-full text-gray-500 italic py-4">
+               Complete a course to earn your certificate!
+             </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 mt-auto">
+        <div class="container mx-auto px-4 py-8 text-center text-sm">
+             &copy; 2025 Godly.id. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Firebase SDKs & Logic -->
+    <script src="js/firebase-config.js"></script>
+    <!-- Import Cert Generator -->
+    <script type="module" src="js/certificate-generator.js"></script>
+    
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+        import { getFirestore, doc, getDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+        import { generateAndDownloadCertificate } from './js/certificate-generator.js';
+
+        const app = initializeApp(window.firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // UI References
+        const loadingSkeleton = document.getElementById('loading-skeleton');
+        const dashboardContent = document.getElementById('dashboard-content');
+        const userNames = document.querySelectorAll('.auth-user-name');
+        const logoutBtn = document.querySelector('.auth-logout-btn');
+        const coursesList = document.getElementById('courses-list');
+        const noEnrollments = document.getElementById('no-enrollments');
+        const certificatesList = document.getElementById('certificates-list');
+        const noCertificates = document.getElementById('no-certificates');
+
+        let currentUser = null;
+
+        // Logout Logic
+        logoutBtn.addEventListener('click', () => {
+            signOut(auth).then(() => window.location.href = 'index.html');
+        });
+
+        // Auth Listener
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                currentUser = user;
+                // User is signed in
+                userNames.forEach(span => span.textContent = user.displayName || user.email);
+                
+                // Fetch User Data
+                await loadEnrolledCourses(user.uid);
+
+                loadingSkeleton.classList.add('hidden');
+                dashboardContent.classList.remove('hidden');
+            } else {
+                // Not signed in
+                window.location.href = 'index.html'; 
+            }
+        });
+
+        async function loadEnrolledCourses(uid) {
+            try {
+                const enrolledRef = collection(db, "users", uid, "enrolledCourses");
+                const snapshot = await getDocs(enrolledRef);
+                
+                if (snapshot.empty) {
+                    noEnrollments.classList.remove('hidden');
+                    return;
+                }
+
+                let coursesHtml = '';
+                let certificatesHtml = '';
+                let hasCertificates = false;
+
+                const enrollments = [];
+                snapshot.forEach(doc => enrollments.push(doc.data()));
+
+                for (const enrollment of enrollments) {
+                    // Fetch full course details
+                    const courseDoc = await getDoc(doc(db, "courses", enrollment.courseId));
+                    let courseData = enrollment; 
+                    let thumbnail = "https://placehold.co/600x400?text=Course";
+
+                    if (courseDoc.exists()) {
+                        const fullData = courseDoc.data();
+                        courseData.courseTitle = fullData.title;
+                        thumbnail = fullData.thumbnailUrl || thumbnail;
+                    }
+
+                    const progress = enrollment.progress || 0;
+                    const isCompleted = enrollment.status === 'completed';
+
+                    // 1. Build Course Card
+                    coursesHtml += `
+                        <div class="bg-white rounded-lg shadow overflow-hidden border border-gray-200 flex flex-col hover:shadow-md transition">
+                            <div class="relative h-40">
+                                <img src="${thumbnail}" class="w-full h-full object-cover" alt="${courseData.courseTitle}">
+                                <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <h3 class="font-bold text-lg text-brand-dark mb-2">${courseData.courseTitle}</h3>
+                                
+                                <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
+                                    <div class="bg-brand-yellow h-2.5 rounded-full" style="width: ${progress}%"></div>
+                                </div>
+                                <div class="text-xs text-gray-500 mb-4 flex justify-between">
+                                    <span>${progress}% Complete</span>
+                                </div>
+
+                                <a href="lms.html?courseId=${enrollment.courseId}" class="mt-auto block text-center bg-brand-dark text-white font-bold py-2 rounded hover:bg-gray-800 transition">
+                                    Continue Learning
+                                </a>
+                            </div>
+                        </div>
+                    `;
+
+                    // 2. Build Certificate Card (CLIENT SIDE GENERATION)
+                    // If status is 'completed', show the button
+                    if (isCompleted) {
+                        hasCertificates = true;
+                        const dateStr = enrollment.completedAt ? new Date(enrollment.completedAt.toDate()).toLocaleDateString() : 'Recent';
+                        const safeTitle = courseData.courseTitle.replace(/'/g, "\\'");
+                        const safeName = (currentUser.displayName || "Student").replace(/'/g, "\\'");
+                        
+                        certificatesHtml += `
+                             <div class="bg-white p-4 rounded-lg shadow border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition group">
+                                <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <h4 class="font-bold text-brand-dark text-sm mb-1 line-clamp-1">${courseData.courseTitle}</h4>
+                                <p class="text-xs text-gray-500 mb-4">Completed on ${dateStr}</p>
+                                <button onclick="window.downloadCert('${safeName}', '${safeTitle}', '${dateStr}')" class="text-xs bg-brand-yellow text-brand-dark font-bold px-4 py-2 rounded hover:bg-yellow-300 transition w-full">
+                                    Download PDF
+                                </button>
+                             </div>
+                        `;
+                    }
+                }
+                
+                coursesList.innerHTML = coursesHtml;
+
+                if (hasCertificates) {
+                    noCertificates.classList.add('hidden');
+                    certificatesList.innerHTML = certificatesHtml;
+                }
+
+            } catch (error) {
+                console.error("Error loading enrollments:", error);
+                coursesList.innerHTML = '<p class="text-red-500">Failed to load courses.</p>';
+            }
+        }
+
+        // Global function for onclick
+        window.downloadCert = (name, title, date) => {
+            generateAndDownloadCertificate(name, title, date);
+        };
+
+    </script>
+  </body>
+</html>
