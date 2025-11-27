@@ -1,4 +1,4 @@
-ok// public/js/auth.js
+// public/js/auth.js
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import { 
@@ -26,22 +26,22 @@ onAuthStateChanged(auth, async (user) => {
     
     // Check/Create User Profile in Firestore
     const userRef = doc(db, "users", user.uid);
-    const userSnap = await getDoc(userRef);
-    
-    if (!userSnap.exists()) {
-      // Create new user profile if it doesn't exist
-      try {
+    try {
+        const userSnap = await getDoc(userRef);
+        
+        if (!userSnap.exists()) {
+        // Create new user profile if it doesn't exist
         await setDoc(userRef, {
-          email: user.email,
-          displayName: user.displayName || user.email.split('@')[0],
-          createdAt: new Date(),
-          role: 'student', // Default role
-          courses: [] // To track enrolled courses
+            email: user.email,
+            displayName: user.displayName || user.email.split('@')[0],
+            createdAt: new Date(),
+            role: 'student', // Default role
+            courses: [] // To track enrolled courses
         });
         console.log("User profile created in Firestore");
-      } catch (error) {
-        console.error("Error creating user profile:", error);
-      }
+        }
+    } catch (e) {
+        console.error("Error checking user profile:", e);
     }
   } else {
     console.log("User is signed out");
@@ -67,7 +67,7 @@ function updateUIForLogin(user) {
 
   myAccountLinks.forEach(link => {
     link.style.display = 'inline-block';
-    link.href = 'my-account.html';
+    // link.href = 'my-account.html'; // Already set in HTML
   });
 
   userNames.forEach(span => {
@@ -155,4 +155,12 @@ window.authFn = {
   loginWithGoogle,
   logoutUser,
   resetPassword
+};
+
+export {
+    signupUser,
+    loginUser,
+    loginWithGoogle,
+    logoutUser,
+    resetPassword
 };
