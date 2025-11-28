@@ -203,7 +203,7 @@
               <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg>
-              <h3 class="mt-2 text-lg font-medium text-gray-900">No courses found</h3>
+              <h3 class="mt-2 text-lg font-medium text-gray-900">No courses available yet</h3>
               <p class="mt-1 text-sm text-gray-500">We are adding new content soon. Stay tuned!</p>
           </div>
 
@@ -270,7 +270,7 @@
         const modalDetails = document.getElementById("payment-details");
         const transId = document.getElementById("trans-id");
 
-        // --- 2. LOGIC ---
+        // --- LOGIC ---
         async function renderCourses(courses) {
             if (!courses || courses.length === 0) {
                 loadingDiv.classList.add('hidden');
@@ -321,7 +321,6 @@
         }
 
         async function init() {
-            // CHECK: Does firebaseConfig exist? 
             if (typeof window.firebaseConfig !== 'undefined') {
                 try {
                     const app = initializeApp(window.firebaseConfig);
@@ -343,7 +342,7 @@
                     renderCourses([]); // Render with an empty array on error
                 }
             } else {
-                console.error("No Firebase Config found.");
+                console.error("No Firebase Config found. Cannot fetch courses.");
                 renderCourses([]); // Render with an empty array if no config
             }
         }
@@ -352,7 +351,6 @@
 
         // Enrollment Handler attached to window scope
         window.handleEnrollment = function(courseId, courseTitle, price) {
-            // Check "Mock Auth" state based on the visible elements in the header
             const isGuest = !document.querySelector('.guest-view').classList.contains('hidden');
             
             if (isGuest) {
@@ -369,7 +367,6 @@
             setTimeout(() => {
                 alert(`Successfully enrolled in "${courseTitle}"! Welcome aboard.`);
                 closeModal();
-                // In a real app, we would redirect to my-account.html here
             }, 2500);
         };
         
