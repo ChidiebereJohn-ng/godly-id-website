@@ -256,9 +256,7 @@
     </div>
 
     <!-- Scripts -->
-    <!-- Note: In a real environment, firebase-config.js would exist. -->
-    <!-- We use inline logic here to handle both Real and Demo scenarios. -->
-
+    <script src="js/firebase-config.js"></script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
         import { getAuth } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
@@ -271,37 +269,6 @@
         const modal = document.getElementById("payment-modal");
         const modalDetails = document.getElementById("payment-details");
         const transId = document.getElementById("trans-id");
-
-        // --- 1. MOCK DATA (Fallback for Preview) ---
-        const MOCK_COURSES = [
-            {
-                id: 'course_01',
-                title: 'A 21st Century Evangelism Course',
-                description: 'Anchoring on the teachings of Apostle Joshua Selman, this course equips you with proven methods and divine boldness to share the Good News.',
-                price: 29.99,
-                category: 'Evangelism',
-                thumbnailUrl: 'https://res.cloudinary.com/dfmaxgyhm/image/upload/v1763031006/communication.508Z_lkd2pq.png',
-                createdAt: new Date()
-            },
-            {
-                id: 'course_02',
-                title: 'A Biblical Entrepreneurship Course',
-                description: 'Timeless principles of Scripture meet practical business strategy. Learn to build and run businesses that honor God and serve people.',
-                price: 49.99,
-                category: 'Leadership',
-                thumbnailUrl: 'https://res.cloudinary.com/dfmaxgyhm/image/upload/v1763030797/card_II.647Z_rbbvgo.png',
-                createdAt: new Date()
-            },
-            {
-                id: 'course_03',
-                title: 'Foundations of Faith',
-                description: 'A comprehensive guide for new believers to understand the core doctrines of Christianity and grow strong in spirit.',
-                price: 0,
-                category: 'Biblical Studies',
-                thumbnailUrl: 'https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&q=80&w=1000',
-                createdAt: new Date()
-            }
-        ];
 
         // --- 2. LOGIC ---
         async function renderCourses(courses) {
@@ -354,17 +321,13 @@
         }
 
         async function init() {
-            // CHECK: Does firebaseConfig exist? (It won't in this preview environment)
+            // CHECK: Does firebaseConfig exist? 
             if (typeof window.firebaseConfig !== 'undefined') {
                 try {
                     const app = initializeApp(window.firebaseConfig);
                     const db = getFirestore(app);
                     const auth = getAuth(app);
                     
-                    // Attach Auth to window for the mock login functions to access if needed,
-                    // or better, handle auth state change here if we were fully implementing it.
-                    // For now, we rely on the visual "Mock Login" buttons in the header.
-
                     const coursesRef = collection(db, "courses");
                     const q = query(coursesRef, where("published", "==", true), orderBy("createdAt", "desc"));
                     const querySnapshot = await getDocs(q);
@@ -376,14 +339,12 @@
                     renderCourses(courses);
 
                 } catch (error) {
-                    console.warn("Firebase Error (falling back to mock data):", error);
-                    renderCourses(MOCK_COURSES);
+                    console.error("Firebase Error:", error);
+                    renderCourses([]); // Render with an empty array on error
                 }
             } else {
-                // FALLBACK: Use Mock Data immediately
-                console.log("No Firebase Config found. Using Mock Data for Preview.");
-                // Simulate network delay for realism
-                setTimeout(() => renderCourses(MOCK_COURSES), 800);
+                console.error("No Firebase Config found.");
+                renderCourses([]); // Render with an empty array if no config
             }
         }
 
