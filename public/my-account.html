@@ -35,49 +35,75 @@
     </style>
   </head>
   <body class="bg-gray-50 font-sans text-brand-dark flex flex-col min-h-screen">
-    <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-      <nav
-        class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20"
-      >
-        <!-- Logo -->
-        <a href="index.html" class="flex-shrink-0">
-          <img src="LOGO.jpg" alt="Godly.id Logo" class="h-12 w-auto" />
-        </a>
-
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="index.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Home</a>
-          <a href="courses.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Courses</a>
-          
-          <!-- Auth Links -->
-          <a href="my-account.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300 auth-my-account-link">My Account</a>
-          <a href="admin.html" class="font-medium text-red-600 hover:text-brand-yellow transition duration-300 auth-admin-link">Admin</a>
-          <span class="auth-user-name font-medium"></span>
-          <button class="bg-gray-200 text-brand-dark font-bold px-6 py-2 rounded-full hover:bg-gray-300 transition duration-300 auth-logout-btn">Log Out</button>
-        </div>
-
-        <!-- Mobile Menu Button (Hamburger) -->
-        <div class="md:hidden">
-          <button id="menu-button" class="text-brand-dark focus:outline-none">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
-        </div>
-      </nav>
-
-      <!-- Mobile Menu (Hidden by default) -->
-      <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
-        <a href="index.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Home</a>
-        <a href="courses.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Courses</a>
-        
-        <!-- Auth Links Mobile -->
-        <a href="my-account.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark auth-my-account-link">My Account</a>
-        <a href="admin.html" class="block px-4 py-3 text-red-600 hover:bg-brand-yellow hover:text-brand-dark auth-admin-link">Admin</a>
-        <button class="block w-full text-left px-4 py-3 bg-gray-200 text-brand-dark font-bold auth-logout-btn">Log Out</button>
-      </div>
-    </header>
+       
+    <!-- Header & Navigation -->
+        <header class="bg-white shadow-md sticky top-0 z-50">
+      
+          <!-- This style block is the critical fix. It hides the dynamic links by default. -->
+          <style>
+            .auth-logout-btn, .auth-my-account-link, .auth-admin-link {
+              display: none;
+            }
+          </style>
+    
+          <nav
+            class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20"
+          >
+            <!-- Logo -->
+            <a href="/" class="flex-shrink-0">
+              <img src="LOGO.jpg" alt="Godly.id Logo" class="h-12 w-auto" />
+            </a>
+    
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-6">
+              <a href="index.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Home</a>
+              <a href="accept-jesus.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Accept Jesus</a>
+              <a href="courses.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Courses</a>
+              <a href="resources.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Resources</a>
+              <a href="prayer-wall.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Community</a>
+              <a href="contact.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Contact</a>
+              
+              <div class="w-px h-6 bg-gray-200"></div>
+    
+              <!-- DYNAMIC AUTH LINKS -->
+              <!-- These are now hidden by default with the style block above -->
+              <a href="my-account.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300 auth-my-account-link">My Account</a>
+              <a href="admin.html" class="font-medium text-red-600 hover:text-red-700 transition duration-300 auth-admin-link">Admin</a>
+              <button class="bg-gray-200 text-brand-dark font-bold px-5 py-2 rounded-full hover:bg-gray-300 transition duration-300 auth-logout-btn">Log Out</button>
+    
+              <!-- The Login button remains visible by default for new visitors -->
+              <a href="login.html" class="bg-brand-yellow text-brand-dark font-bold px-5 py-2 rounded-full hover:bg-yellow-300 transition duration-300 auth-login-btn">Log In</a>
+            </div>
+    
+            <!-- Mobile Menu Button (Hamburger) -->
+            <div class="md:hidden">
+              <button id="menu-button" class="text-brand-dark focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+              </button>
+            </div>
+          </nav>
+    
+          <!-- Mobile Menu (Hidden by default) -->
+          <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="index.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Home</a>
+            <a href="accept-jesus.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Accept Jesus</a>
+            <a href="courses.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Courses</a>
+            <a href="resources.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Resources</a>
+            <a href="prayer-wall.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Community</a>
+            <a href="contact.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Contact</a>
+            
+            <!-- DYNAMIC AUTH LINKS (MOBILE) -->
+            <div class="border-t border-gray-200 pt-2 mt-2">
+                <a href="my-account.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark auth-my-account-link">My Account</a>
+                <a href="admin.html" class="block px-4 py-3 text-red-600 hover:bg-brand-yellow hover:text-brand-dark auth-admin-link">Admin</a>
+                <button class="block w-full text-left px-4 py-3 bg-gray-200 text-brand-dark font-bold auth-logout-btn">Log Out</button>
+                <a href="login.html" class="block py-3 text-center bg-brand-yellow text-brand-dark font-bold auth-login-btn">Log In</a>
+            </div>
+          </div>
+        </header>
+   
 
     <main class="container mx-auto px-4 py-10 max-w-5xl flex-grow">
         <!-- Main content -->
