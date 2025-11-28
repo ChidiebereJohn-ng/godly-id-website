@@ -3,18 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags (from plan) -->
     <title>Discover God's Love | Welcome to Godly.id</title>
     <meta
       name="description"
       content="Start your journey of faith. Discover the life-changing love of God, find free resources, and join a community dedicated to growing in His grace."
     />
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (from plan) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Custom Tailwind Configuration -->
     <script>
       tailwind.config = {
         theme: {
@@ -24,14 +32,15 @@
               serif: ["Playfair Display", "serif"],
             },
             colors: {
-              "brand-yellow": "#FACC15",
-              "brand-dark": "#111827",
+              "brand-yellow": "#FACC15", // From your logo (amber-400)
+              "brand-dark": "#111827", // gray-900
             },
           },
         },
       };
     </script>
     <style>
+      /* Custom modal styles for payment stub */
       .payment-modal-backdrop {
         position: fixed;
         inset: 0;
@@ -49,6 +58,8 @@
         max-width: 500px;
         text-align: center;
       }
+
+      /* Style for video background */
       #hero-video {
         position: absolute;
         top: 50%;
@@ -80,7 +91,9 @@
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
           <a href="index.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Home</a>
+          <a href="accept-jesus.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Accept Jesus</a>
           <a href="courses.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Courses</a>
+          <a href="resources.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Resources</a>
           <a href="prayer-wall.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Community</a>
           <a href="contact.html" class="font-medium text-brand-dark hover:text-brand-yellow transition duration-300">Contact</a>
           
@@ -104,7 +117,9 @@
       <!-- Mobile Menu (Hidden by default) -->
       <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
         <a href="index.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Home</a>
+        <a href="accept-jesus.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Accept Jesus</a>
         <a href="courses.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Courses</a>
+        <a href="resources.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Resources</a>
         <a href="prayer-wall.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Community</a>
         <a href="contact.html" class="block px-4 py-3 text-brand-dark hover:bg-brand-yellow hover:text-brand-dark">Contact</a>
         
@@ -115,7 +130,7 @@
         <button class="block w-full text-left px-4 py-3 bg-gray-200 text-brand-dark font-bold auth-logout-btn">Log Out</button>
       </div>
     </header>
-
+    
     <!-- Main Content -->
     <main>
       <!-- 1. Hero Section -->
@@ -156,22 +171,112 @@
         </div>
       </section>
 
-      <!-- Rest of the body remains the same... -->
-    </main>
+      <!-- 2. Key Pillars Section -->
+      <section id="pillars" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-4xl md:text-5xl font-serif font-bold text-center text-brand-dark mb-16"
+          >
+            Find What You're Looking For
+          </h2>
 
-    <!-- Footer and Scripts -->
-    <!-- Scripts need to include firebase-config and auth.js -->
-    <script src="js/firebase-config.js"></script>
-    <script type="module" src="js/auth.js"></script>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Pillar 1: Accept Jesus -->
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center"
+            >
+              <div
+                class="flex items-center justify-center h-16 w-16 bg-brand-yellow rounded-full mx-auto mb-6"
+              >
+                <!-- Heroicon: Heart -->
+                <svg
+                  class="w-8 h-8 text-brand-dark"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-serif font-bold text-brand-dark mb-3">
+                Accept Jesus as Savior
+              </h3>
+              <p class="text-gray-600 mb-5">
+                Take the most important step in your journey. Learn what it
+                means to start a new life in Christ.
+              </p>
+              <a
+                href="accept-jesus.html"
+                class="font-bold text-brand-yellow hover:text-yellow-500 transition duration-300"
+                >Learn More &rarr;</a
+              >
+            </div>
 
-    <script>
-      // --- Mobile Menu Toggle ---
-      document
-        .getElementById("menu-button")
-        .addEventListener("click", function () {
-          var mobileMenu = document.getElementById("mobile-menu");
-          mobileMenu.classList.toggle("hidden");
-        });
-    </script>
-  </body>
-</html>
+            <!-- Pillar 2: Daily Devotion -->
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center"
+            >
+              <div
+                class="flex items-center justify-center h-16 w-16 bg-brand-yellow rounded-full mx-auto mb-6"
+              >
+                <!-- Heroicon: Book Open -->
+                <svg
+                  class="w-8 h-8 text-brand-dark"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.105 0 4.079.86 5.5 2.25l.375.298c.118.093.243.17.375.242a.39.39 0 0 1 .25 0c.132-.072.257-.15.375-.242l.375-.298c1.421-1.39 3.395-2.25 5.5-2.25 .356 0 .706.023 1.05.067v-1.618c-.201.033-.406.05-.618.05-1.313 0-2.58-.3-3.75-.863a.998.998 0 0 0-1.25 0c-1.17.563-2.437.863-3.75.863s-2.58-.3-3.75-.863a.998.998 0 0 0-1.25 0c-1.17.563-2.437.863-3.75.863A8.967 8.967 0 0 1 6 15.75v-1.5c0-.553.224-1.053.586-1.414.362-.36.86-.586 1.414-.586.553 0 1.053.224 1.414.586.36.36.586.86.586 1.414v1.5a8.967 8.967 0 0 0 3 2.25c.118.093.243.17.375.242a.39.39 0 0 1 .25 0c.132-.072.257-.15.375-.242C14.079 17.61 16 16.75 18 16.75c.356 0 .706.023 1.05.067v-1.618C18.848 15.074 18.43 15 18 15c-1.313 0-2.58.3-3.75-.863a.998.998 0 0 0-1.25 0c-1.17-.563-2.437-.863-3.75-.863s-2.58.3-3.75-.863a.998.998 0 0 0-1.25 0C6.93 15.563 5.663 15.863 4.35 15.863A8.967 8.967 0 0 1 3 15.75V4.262c.938-.332 1.948-.512 3-.512 2.105 0 4.079.86 5.5 2.25l.375.298c.118.093.243.17.375.242a.39.39 0 0 1 .25 0c.132-.072.257-.15.375-.242l.375-.298C14.079 4.61 16 3.75 18 3.75c.356 0 .706.023 1.05.067V6.25a8.967 8.967 0 0 0-3-2.25c-.118-.093-.243-.17-.375-.242a.39.39 0 0 1-.25 0c-.132.072-.257-.15-.375-.242L15 4.298C13.579 5.69 11.605 6.5 9.5 6.5c-.356 0-.706-.023-1.05-.067V4.618C8.652 4.585 8.824 4.5 9 4.5c1.313 0 2.58.3 3.75.863a.998.998 0 0 0 1.25 0c1.17-.563 2.437-.863-3.75-.863s2.58.3 3.75.863a.998.998 0 0 0 1.25 0C16.07 4.61 17.337 4.31 18.65 4.31a8.967 8.967 0 0 1 2.25 1.933V6.042Z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-serif font-bold text-brand-dark mb-3">
+                Daily Devotion
+              </h3>
+              <p class="text-gray-600 mb-5">
+                Start your day with inspiration. Access daily devotionals to
+                strengthen your walk with God.
+              </p>
+              <a
+                href="resources.html"
+                class="font-bold text-brand-yellow hover:text-yellow-500 transition duration-300"
+                >Read Today &rarr;</a
+              >
+            </div>
+
+            <!-- Pillar 3: Free Courses -->
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center"
+            >
+              <div
+                class="flex items-center justify-center h-16 w-16 bg-brand-yellow rounded-full mx-auto mb-6"
+              >
+                <!-- Heroicon: Academic Cap -->
+                <svg
+                  class="w-8 h-8 text-brand-dark"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.26 10.147a60.436 60.436 0 0 0 3.878 5.105c.934.867 2.131 1.58 3.48 2.022a.53.53 0 0 1 .042.842l-.234.335a.53.53 0 0 1-.741.042a8.967 8.967 0 0 0-3.481-.988l-.513-.029c-.179 0-.355.042-.51.115a.53.53 0 0 1-.424.043l-.317-.112a.53.53 0 0 1-.044-.842c.344-.492.702-.975 1.09-1.456A8.967 8.967 0 0 0 3.2 8.324c-.201-.252-.257-.584-.117-.852l.279-1.01a.53.53 0 0 1 .581-.351l.317.112c.155.056.32.083.48.083.666 0 1.301-.266 1.77-.731a.53.53 0 0 1 .74-.041l.279 1.011c.14.268.084.599-.117.852a8.967 8.967 0 0 0-1.09 1.456z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 12.75c.364 0 .706-.067 1.028-.188a2.25 2.25 0 0 1 2.12 2.12c0 .363-.066.705-.187 1.028a.53.53 0 0 1-.741.042l-.235-.335a.53.53 0 0 1 .042-.842c.343-.493.7-1.32.7-2.12 0-.363-.066-.705-.187-1.028a.53.53 0 0 1 .741-.042l.235.335c.371.527.371 1.282 0 1.81a.53.53 0 0 1-.741.042l-.235-.335a.53.53 0 0 1
